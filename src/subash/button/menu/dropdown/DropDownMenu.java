@@ -12,7 +12,6 @@ import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
@@ -52,7 +51,6 @@ public class DropDownMenu {
 		Button rightArrowDropDownBtn = new Button(buttonMenuCntrl, SWT.ARROW | SWT.RIGHT );
 		rightArrowDropDownBtn.setLayoutData(new GridData(GridData.FILL_VERTICAL));
 		
-		Label separator = new Label(shell, SWT.HORIZONTAL | SWT.SEPARATOR | SWT.FILL);
 	/*    separator.setLayoutData(new GridData(SWT.FILL));*/
 
 		rightArrowDropDownBtn.addSelectionListener(new SelectionAdapter() {
