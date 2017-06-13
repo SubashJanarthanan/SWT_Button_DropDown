@@ -1,17 +1,18 @@
 package subash.button.menu.dropdown;
 
 import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.layout.GridLayoutFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CLabel;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Shell;
@@ -32,23 +33,27 @@ public class DropDownMenu {
 	public static void main(String[] args) {
 		Display display = new Display();
 		final Shell shell = new Shell(display);
-		shell.setSize(500, 500);
+		shell.setSize(300, 300);
 		shell.setText("SWT Button Arrow Right Drop Down Menu Example");
 		
 		// set layout for the shell
 		shell.setLayout(new RowLayout());
 
 		// creating a composite to add a button
-		final Composite buttonMenuCntrl = new Composite(shell, SWT.BORDER);
-		GridLayoutFactory.fillDefaults().numColumns(2).equalWidth(false).spacing(0, 1).applyTo(buttonMenuCntrl);
+		final Composite buttonMenuCntrl = new Composite(shell, SWT.FILL);
+		buttonMenuCntrl.setLayout(new GridLayout(2, true));
+		
 		
 		// Creating CLabel for button Name
 		CLabel lbl = new CLabel(buttonMenuCntrl, SWT.CENTER);
-		lbl.setText("Add Drop Down For Button");
+		lbl.setText("DD Button");
 		
 		// Creating right arrow button to add a right arrow
-		Button rightArrowDropDownBtn = new Button(buttonMenuCntrl, SWT.ARROW | SWT.RIGHT);
+		Button rightArrowDropDownBtn = new Button(buttonMenuCntrl, SWT.ARROW | SWT.RIGHT );
 		rightArrowDropDownBtn.setLayoutData(new GridData(GridData.FILL_VERTICAL));
+		
+		Label separator = new Label(shell, SWT.HORIZONTAL | SWT.SEPARATOR | SWT.FILL);
+	/*    separator.setLayoutData(new GridData(SWT.FILL));*/
 
 		rightArrowDropDownBtn.addSelectionListener(new SelectionAdapter() {
 			@Override
